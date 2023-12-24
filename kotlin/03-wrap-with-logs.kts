@@ -7,19 +7,19 @@ data class NumberWithLogs (
   val logs: List<String>,
 )
 
-fun wrapWithLogs(x: Double) = NumberWithLogs(
-  result = x,
-  logs = emptyList(),
-)
-
 fun square(x: NumberWithLogs) = NumberWithLogs(
   result = x.result * x.result,
-  logs = x.logs.plusElement("Squared ${x.result} to get ${x.result * x.result}."),
+  logs = x.logs.plus("Squared ${x.result} to get ${x.result * x.result}."),
 )
 
 fun addOne(x: NumberWithLogs) = NumberWithLogs(
   result = x.result + 1,
-  logs = x.logs.plusElement("Added 1 to ${x.result} to get ${x.result + 1}."),
+  logs = x.logs.plus("Added 1 to ${x.result} to get ${x.result + 1}."),
+)
+
+fun wrapWithLogs(x: Double) = NumberWithLogs(
+  result = x,
+  logs = emptyList(),
 )
 
 println(square(square(wrapWithLogs(2.0))))
