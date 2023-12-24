@@ -11,7 +11,7 @@ data class NumberWithLogs (
 
 fun square(x: Double) = NumberWithLogs(
   result = x * x,
-  logs = listOf("Squared ${x} to get ${x * x}.")
+  logs = listOf("Squared ${x} to get ${x * x}."),
 )
 
 fun addOne(x: NumberWithLogs) = NumberWithLogs(
